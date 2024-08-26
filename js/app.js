@@ -35,3 +35,29 @@
 // 8. Handle end-of-game scenarios:
   // - If the player wins or loses, display the appropriate message.
   // - Provide an option to restart the game by resetting the game state and calling the initialization function.
+
+
+  // Variables 
+  let currentLocation = "start";
+  let choices = {
+      left: "",
+      right: "",
+      cross: "",
+      swim: "",
+      enter: "",
+      continue: "",
+      open: "",
+      leave: "",
+      fight: "",
+      run: "",
+      red: "",
+      blue: "",
+      green: "",
+      solve: "",
+      exit: "",
+  };
+  
+  // Cached Elements
+  const sceneDescription = document.getElementById("scene-description");
+  const choice1 = document.getElementById("choice1");
+  const choice2 = document.getElementById("choice2");
