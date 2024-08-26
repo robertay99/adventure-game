@@ -3,11 +3,11 @@
 
 // 1. Declare variables for game state and player choices.
   // - Declare a variable to track the current location of the player.
-  // - Declare variables to store player choices for levels (carbin door level, bridge level, bear level, puzzle level.).
+  // - Declare variables to store player choices for levels (choice1, choice2)
 
 // 2. Create HTML elements for displaying game scenes and player choices.
   // - Create elements to display the current scene description.
-  // - Create elements for choice buttons (LEFT, RIGHT, CROSS, SWIM, OPEN.).
+  // - Create elements for choice buttons( I will create 2 buttons for choices.).
 
 // 3. Create cached element references for the game scene display and choice buttons.
   // - Cache reference for the scene description display.
@@ -24,7 +24,7 @@
 
 
 // 6. Stub up a handleChoice() function for the event listeners to call.
-  // - Capture the player's choice and update the game state (e.g., location, choices).
+  // - Capture the player's choice and update the game state for next level.
   // - Check if the player's choice leads to a new scene or ends the game.
   // - If the game is not over, call the render() function to update the display.
 
