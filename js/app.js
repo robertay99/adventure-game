@@ -34,11 +34,8 @@
 // - If the player wins or loses, display the appropriate message.
 // - Provide an option to restart the game by resetting the game state and calling the initialization function.
 
-
-
 /*---------- Variables (state) ---------*/
 let currentLocation = "start";
-
 
 /*-------------- Constants -------------*/
 let choices = {
@@ -73,22 +70,58 @@ function game_start() {
 }
 
 function render() {
-    switch (currentLocation) {
-        case "start":
-            startScene();
-            break;
-        case "left":
-            leftScene();
-            break;
-        case "right":
-            rightScene();
-            break;
-        case "cross":
-            crossScene();
-            break;
-        default:
-            break;
-    }
+  switch (currentLocation) {
+    case "start":
+      startScene();
+      break;
+    case "left":
+      leftScene();
+      break;
+    case "right":
+      rightScene();
+      break;
+    case "cross":
+      crossScene();
+      break;
+    case "swim":
+      swimScene();
+      break;
+    case "enter":
+      enterScene();
+      break;
+    case "continue":
+      continueScene();
+      break;
+    case "open":
+      openScene();
+      break;
+    case "leave":
+      leaveScene();
+      break;
+    case "fight":
+      fightScene();
+      break;
+    case "run":
+      runScene();
+      break;
+    case "red":
+      redScene();
+      break;
+    case "blue":
+      blueScene();
+      break;
+    case "green":
+      greenScene();
+      break;
+    case "solve":
+      solveScene();
+      break;
+    case "exit":
+      exitScene();
+      break;
+    default:
+      break;
+  }
 }
 
 // scene functions with event listener
@@ -128,11 +161,107 @@ function crossScene() {
   choice2.onclick = () => handleChoice("leave");
 }
 
-
-
-function handleChoice(choice) {
-    currentLocation = choice;
-    render();
+function swimScene() {
+  sceneDescription.textContent =
+    "You bravely attempt to swim across the river. The current is strong, but you manage to reach the other side. However, you encounter a ferocious wild bear!";
+  choice1.textContent = "Fight";
+  choice2.textContent = "Run";
+  choice1.onclick = () => handleChoice("fight");
+  choice2.onclick = () => handleChoice("run");
 }
 
-game_start()
+function enterScene() {
+  sceneDescription.textContent =
+    "You cautiously enter the cabin and discover a mysterious room. There are three doors in front of you: RED, BLUE, and GREEN.";
+  choice1.textContent = "Red";
+  choice2.textContent = "Blue";
+  choice2.insertAdjacentHTML(
+    "afterend",
+    '<button id="choice3" class="choice-button">Green</button>'
+  );
+  choice1.onclick = () => handleChoice("red");
+  choice2.onclick = () => handleChoice("blue");
+  const choice3 = document.getElementById("choice3");
+  choice3.onclick = () => handleChoice("green");
+}
+
+function continueScene() {
+  sceneDescription.textContent =
+    "You decide to continue on your path, leaving the cabin behind. You encounter a group of friendly travelers who guide you through the forest. They lead you to a hidden treasure. You win!";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+}
+
+function openScene() {
+  sceneDescription.textContent =
+    "Congratulations! You found a hidden treasure. You win! 🎉";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+}
+
+function leaveScene() {
+  sceneDescription.textContent =
+    "You decide to leave the chest and continue your journey. You come across a group of friendly travelers who guide you back to safety. You win! 🎉";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+}
+
+function fightScene() {
+  sceneDescription.textContent =
+    "You valiantly fight the bear, but unfortunately, it overpowers you. Game over! 😒";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+}
+
+function runScene() {
+  sceneDescription.textContent =
+    "You quickly turn and run away from the bear, narrowly escaping its grasp. You find a safe spot to rest and continue your journey. You win! 🎉";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+}
+
+function redScene() {
+  sceneDescription.textContent =
+    "As you open the red door, you find yourself in a room filled with fire and intense heat. It seems to be a trap! You quickly close the door and rush back to the cabin.";
+  currentLocation = "enter";
+  render();
+}
+
+function blueScene() {
+  sceneDescription.textContent =
+    "You open the blue door and find yourself in a room full of puzzles and riddles. Solving them will lead you to great rewards.";
+  choice1.textContent = "Solve";
+  choice2.textContent = "Exit";
+  choice1.onclick = () => handleChoice("solve");
+  choice2.onclick = () => handleChoice("exit");
+}
+
+function greenScene() {
+  sceneDescription.textContent =
+    "You open the green door and find yourself in a lush garden. It's a peaceful place, filled with beautiful flowers and singing birds. You feel a sense of tranquility and decide to stay in the garden forever. You win! 🎉";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+}
+
+function solveScene() {
+  sceneDescription.textContent =
+    "You successfully solve all the puzzles and claim the treasure. Congratulations! You win! 🎉";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+}
+
+function exitScene() {
+  sceneDescription.textContent =
+    "You decide to leave the room, but as you do, the door slams shut behind you, trapping you forever. Game over! 😒";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+}
+
+// handleChoice function
+function handleChoice(choice) {
+  currentLocation = choice;
+  render();
+}
+
+//render game_start
+game_start();
