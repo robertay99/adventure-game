@@ -130,7 +130,7 @@ function startScene() {
     "You find yourself in a dark whispery forest. You see two paths ahead of you: LEFT and RIGHT.";
   choice1.textContent = "Left";
   choice2.textContent = "Right";
-  choice1.onclick = () => handleChoice("left");
+choice.addEventListener('click', () => handleChoice("left");
   choice2.onclick = () => handleChoice("right");
 }
 
