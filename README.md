@@ -48,4 +48,4 @@ Here are a few enhancements planned for future versions of the game:
 
 ---
 
-Enjoy your journey through the **Whispering Woods Adventure**, and remember—every choice counts!
+Enjoy your journey through the **Adventure game**, and remember—every choice counts!
