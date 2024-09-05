@@ -2,7 +2,7 @@
 
 ![Adventure Game Screenshot](./adventure_screenshot.jpg)
 
-## Game Name: **Whispering Woods Adventure**
+## Game Name: **Adventure Game**
 
 ### Description:
 **Whispering Woods Adventure** is an interactive text-based adventure game where players find themselves lost in a dark, mysterious forest. Their only way out is by making a series of critical decisions that guide them through various scenarios. The choices will lead them to different environments, challenges, and ultimately one of many possible outcomes, from uncovering hidden treasures to encountering dangerous traps.
